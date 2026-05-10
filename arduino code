@@ -1,0 +1,33 @@
+int red = 12;
+int yellow = 10;
+int green = 8;
+
+int timerset = A0; 
+int t = 0;
+
+int first = 100;
+int second = 1000;
+
+void setup() {
+  pinMode(red, OUTPUT); 
+  pinMode(yellow, OUTPUT); 
+  pinMode(green, OUTPUT); 
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  t = analogRead(timerset);
+  Serial.print(t);
+  digitalWrite(red, HIGH);
+  digitalWrite(green, LOW);
+  delay(t + 10);
+
+  digitalWrite(yellow, HIGH);
+  digitalWrite(red, LOW);
+  delay(t + 10);
+
+  digitalWrite(green, HIGH);
+  digitalWrite(yellow, LOW);
+  delay(t + 10);
+}
